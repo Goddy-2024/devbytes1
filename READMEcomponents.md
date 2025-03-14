@@ -2,9 +2,9 @@
 This React app consists of different functional components, each with its own role:
 
 `Header` - Displays the header and resets the view when the logo is clicked.<br>
-`Content` - Shows a list of accounts and contacts and handles scrolling effects.
-`AccountDetails `- Displays details of the selected account.
-`App` - The main component that combines all these components.
+`Content` - Shows a list of accounts and contacts and handles scrolling effects.<br>
+`AccountDetails `- Displays details of the selected account.<br>
+`App` - The main component that combines all these components.<br>
 ## `Header Component`
 jsx
 
@@ -30,8 +30,8 @@ jsx
     };
 
 ### What does this component do?
-*Displays a header with a logo*
-*When you click the logo, it spins for 1 second and resets the view*
+*Displays a header with a logo*<br>
+*When you click the logo, it spins for 1 second and resets the view*<br>
 
 ## `Content Component`
 Inside Content Component
@@ -40,8 +40,8 @@ jsx
         const Content = ({ setActiveAccount }) => {
         const accounts = ["ACCOUNT 1", "ACCOUNT 2", "ACCOUNT 3", "ACCOUNT 4"];
         const contacts = ["CONTACT 1", "CONTACT 2", "CONTACT 3", "CONTACT 4"];
-*accounts is an array containing account names*
-*contacts is an array containing matching contacts*
+*accounts is an array containing account names*<br>
+*contacts is an array containing matching contacts*<br>
 
 ## Scroll Effect Handling (useEffect)
 jsx
@@ -71,11 +71,11 @@ jsx
     return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 ### What does this do?
-* useEffect runs when the component mounts
-* When the user scrolls, it checks if account-1 has moved under the header
-* If true, it adds a blur effect to the header and caption
-* When scrolled back up, it removes the blur effect
-* It also removes the event listener when the component unmounts (cleanup)
+* useEffect runs when the component mounts<br>
+* When the user scrolls, it checks if account-1 has moved under the header<br>
+* If true, it adds a blur effect to the header and caption<br>
+* When scrolled back up, it removes the blur effect<br>
+* It also removes the event listener when the component unmounts (cleanup)<br>
 
 ## Table for Accounts and Contacts
 
@@ -115,8 +115,8 @@ jsx
     );
     };
 ### What does this do?
-*Displays a table with two columns – one for accounts and one for contacts*
-*When an account is clicked, it updates the state by calling setActiveAccount(acc)*
+*Displays a table with two columns – one for accounts and one for contacts*<br>
+*When an account is clicked, it updates the state by calling setActiveAccount(acc)*<br>
 
 ## `AccountDetails Component`
 
@@ -129,9 +129,9 @@ jsx
     );
 
 ### What does this do?
-* Displays the selected account name
-* Shows a placeholder message for account details
-* Has a "Go Back" button that resets the view
+* Displays the selected account name<br>
+* Shows a placeholder message for account details<br>
+* Has a "Go Back" button that resets the view<br>
 
 ## `Main App Component`
 
@@ -152,10 +152,10 @@ jsx
     );
     }
 ### What does this do?
-* Defines state (activeAccount) to store the selected account
-* If an account is selected, it displays AccountDetails
-* If no account is selected, it shows the accounts list (Content)
-* The resetView function resets the view by setting activeAccount to null
+* Defines state (activeAccount) to store the selected account<br>
+* If an account is selected, it displays AccountDetails<br>
+* If no account is selected, it shows the accounts list (Content)<br>
+* The resetView function resets the view by setting activeAccount to null<br>
 
 
 
