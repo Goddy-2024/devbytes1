@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Background Test</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #0A0A2A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        svg {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <svg width="100%" height="100%" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background Gradient -->
+        <defs>
+            <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#020224; stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#0B0B5E; stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#bgGradient)" />
+        
+        <!-- Abstract Geometric Shapes for Depth and Style -->
+        <rect x="80" y="40" width="280" height="280" fill="#1A1A66" opacity="0.5" transform="rotate(45 220 180)" />
+        <rect x="420" y="80" width="260" height="260" fill="#292979" opacity="0.4" transform="rotate(-45 550 210)" />
+        <rect x="160" y="320" width="340" height="340" fill="#333388" opacity="0.3" transform="rotate(45 330 490)" />
+        <rect x="560" y="320" width="220" height="220" fill="#3D3DAA" opacity="0.5" transform="rotate(-45 670 430)" />
+        
+        <!-- Diagonal Overlays for a More Layered Look -->
+        <rect x="100" y="0" width="600" height="40" fill="#111177" opacity="0.2" transform="rotate(25 400 50)" />
+        <rect x="300" y="200" width="500" height="50" fill="#222288" opacity="0.2" transform="rotate(-25 550 250)" />
+        
+        <!-- Soft Glow Highlights -->
+        <circle cx="400" cy="90" r="120" fill="#ffffff" opacity="0.05" />
+        <circle cx="620" cy="420" r="180" fill="#ffffff" opacity="0.02" />
+        
+        <!-- Extra Depth Overlay -->
+        <rect width="100%" height="100%" fill="url(#bgGradient)" opacity="0.15" />
+    </svg>
+</body>
+</html>
