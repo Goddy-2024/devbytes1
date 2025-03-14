@@ -1,7 +1,7 @@
 #  Breakdown of Components
 This React app consists of different functional components, each with its own role:
 
-`Header` - Displays the header and resets the view when the logo is clicked.
+`Header` - Displays the header and resets the view when the logo is clicked.<br>
 `Content` - Shows a list of accounts and contacts and handles scrolling effects.
 `AccountDetails `- Displays details of the selected account.
 `App` - The main component that combines all these components.
