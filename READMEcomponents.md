@@ -8,13 +8,13 @@ This React app consists of different functional components, each with its own ro
 ## `Header Component`
 jsx
 
-  const Header = ({ resetView }) => {
-  const handleLogoClick = (e) => {
+    const Header = ({ resetView }) => {
+    const handleLogoClick = (e) => {
     e.target.classList.add("spin");  // Adds the "spin" CSS class to the logo
     setTimeout(() => e.target.classList.remove("spin"), 1000);  // Removes "spin" after 1 second
     resetView();  // Calls the resetView function from props
-  };
-  return (
+    };
+    return (
     <header id="main-header">
       <img
         src="repentlogo.png"
@@ -26,8 +26,8 @@ jsx
         <strong>ONGATA RONGAI MAIN ALTAR</strong>
       </span>
     </header>
-  );
-};
+    );
+    };
 
 ### What does this component do?
 *Displays a header with a logo*
@@ -37,16 +37,16 @@ jsx
 Inside Content Component
 jsx
 
-const Content = ({ setActiveAccount }) => {
-  const accounts = ["ACCOUNT 1", "ACCOUNT 2", "ACCOUNT 3", "ACCOUNT 4"];
-  const contacts = ["CONTACT 1", "CONTACT 2", "CONTACT 3", "CONTACT 4"];
+        const Content = ({ setActiveAccount }) => {
+        const accounts = ["ACCOUNT 1", "ACCOUNT 2", "ACCOUNT 3", "ACCOUNT 4"];
+        const contacts = ["CONTACT 1", "CONTACT 2", "CONTACT 3", "CONTACT 4"];
 *accounts is an array containing account names*
 *contacts is an array containing matching contacts*
 
 ## Scroll Effect Handling (useEffect)
 jsx
 
-  useEffect(() => {
+    useEffect(() => {
     const handleScroll = () => {
       const account1 = document.getElementById("account-1");
       const header = document.getElementById("main-header");
@@ -69,7 +69,7 @@ jsx
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    }, []);
 ### What does this do?
 * useEffect runs when the component mounts
 * When the user scrolls, it checks if account-1 has moved under the header
@@ -79,7 +79,7 @@ jsx
 
 ## Table for Accounts and Contacts
 
-  return (
+     return (
     <section className="content">
       <table id="accncont">
         <caption>
@@ -112,21 +112,21 @@ jsx
         </tbody>
       </table>
     </section>
-  );
-};
+    );
+    };
 ### What does this do?
 *Displays a table with two columns – one for accounts and one for contacts*
 *When an account is clicked, it updates the state by calling setActiveAccount(acc)*
 
 ## `AccountDetails Component`
 
-const AccountDetails = ({ account, resetView }) => (
-  <div className="account-details">
+    const AccountDetails = ({ account, resetView }) => (
+    <div className="account-details">
     <h2>{account}</h2>
     <p>Details for {account} will be displayed here.</p>
     <button onClick={resetView}>Go Back</button>
-  </div>
-);
+    </div>
+    );
 
 ### What does this do?
 * Displays the selected account name
@@ -135,12 +135,12 @@ const AccountDetails = ({ account, resetView }) => (
 
 ## `Main App Component`
 
-function App() {
-  const [activeAccount, setActiveAccount] = useState(null); // State to track the selected account
+    function App() {
+    const [activeAccount, setActiveAccount] = useState(null); // State to track the selected account
 
-  const resetView = () => setActiveAccount(null); // Function to reset view
+    const resetView = () => setActiveAccount(null); // Function to reset view
 
-  return (
+    return (
     <div className="App">
       <Header resetView={resetView} />
       {activeAccount ? (
@@ -149,8 +149,8 @@ function App() {
         <Content setActiveAccount={setActiveAccount} />
       )}
     </div>
-  );
-}
+    );
+    }
 ### What does this do?
 * Defines state (activeAccount) to store the selected account
 * If an account is selected, it displays AccountDetails
